@@ -31,7 +31,58 @@ Attach this policy to your user as well
 
 ![Policies To Attach](https://github.com/jaiswaladi246/EKS-Complete/blob/main/Policies.png)
 
-# AWSCLI
+
+
+
+------------------R e d H a t   F a m i l y-----------------------
+
+
+# # AWSCLI
+
+```bash
+sudo yum update -y
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version
+aws-cli/2.x.x Python/3.x.x Linux/4.x.x botocore/2.x.x
+aws configure
+```
+
+
+
+# # KUBECTL 
+```bash
+curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.22.15/2023-04-19/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin
+
+kubectl version --client
+```
+
+
+
+# # EKSCTL 
+
+```bash
+sudo yum update -y
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" -o "eksctl.tar.gz"
+
+tar -xzf eksctl.tar.gz
+sudo mv eksctl /usr/local/bin
+eksctl version
+```
+
+
+
+
+
+
+
+
+------------------D e b i a n   F a m i l y---------------------
+
+# AWS CLI
 
 ```bash
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -61,7 +112,7 @@ eksctl version
 ## Create EKS CLUSTER
 
 ```bash
-eksctl create cluster --name=my-eks22 \
+eksctl create cluster --name=DS-EKS \
                       --region=ap-south-1 \
                       --zones=ap-south-1a,ap-south-1b \
                       --version=1.30 \
@@ -69,10 +120,10 @@ eksctl create cluster --name=my-eks22 \
 
 eksctl utils associate-iam-oidc-provider \
     --region ap-south-1 \
-    --cluster my-eks22 \
+    --cluster Delhi-EKS \
     --approve
 
-eksctl create nodegroup --cluster=my-eks22 \
+eksctl create nodegroup --cluster=Delhi-EKS \
                        --region=ap-south-1 \
                        --name=node2 \
                        --node-type=t3.medium \
@@ -81,7 +132,7 @@ eksctl create nodegroup --cluster=my-eks22 \
                        --nodes-max=4 \
                        --node-volume-size=20 \
                        --ssh-access \
-                       --ssh-public-key=Key \
+                       --ssh-public-key=my-pempem \
                        --managed \
                        --asg-access \
                        --external-dns-access \

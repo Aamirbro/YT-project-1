@@ -118,10 +118,10 @@ eksctl create cluster --name=Aamir-EKS \
 
 eksctl utils associate-iam-oidc-provider \
     --region ap-south-1 \
-    --cluster Delhi-EKS \
+    --cluster Aamir-EKS \
     --approve
 
-eksctl create nodegroup --cluster=Delhi-EKS \
+eksctl create nodegroup --cluster=Aamir-EKS \
                        --region=ap-south-1 \
                        --name=node2 \
                        --node-type=t3.medium \

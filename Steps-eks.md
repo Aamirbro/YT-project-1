@@ -110,7 +110,7 @@ eksctl version
 ## Create EKS CLUSTER
 
 ```bash
-eksctl create cluster --name=DS-EKS \
+eksctl create cluster --name=Aamir-EKS \
                       --region=ap-south-1 \
                       --zones=ap-south-1a,ap-south-1b \
                       --version=1.30 \

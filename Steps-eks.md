@@ -34,7 +34,7 @@ Attach this policy to your user as well
 
 
 
-------------------R e d H a t   F a m i l y-----------------------
+------------------# R e d H a t                  F a m i l y-----------------------
 
 
 # # AWSCLI
@@ -66,10 +66,8 @@ kubectl version --client
 
 ```bash
 sudo yum update -y
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" -o "eksctl.tar.gz"
-
-tar -xzf eksctl.tar.gz
-sudo mv eksctl /usr/local/bin
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 ```
 
@@ -80,7 +78,7 @@ eksctl version
 
 
 
-------------------D e b i a n   F a m i l y---------------------
+------------------# D e b i a n         F a m i l y---------------------
 
 # AWS CLI
 
